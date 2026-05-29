@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -11,14 +12,21 @@ export function Sidebar() {
   return (
     <aside className="fixed inset-y-0 left-0 z-40 hidden w-72 border-r border-white/10 bg-slate-950/85 px-5 py-6 shadow-2xl shadow-black/25 backdrop-blur-xl lg:flex lg:flex-col">
       <div className="flex items-center gap-3">
-        <div className="grid size-11 place-items-center rounded-xl border border-cyan-300/20 bg-cyan-300/10 text-sm font-semibold text-cyan-100">
-          SB
+        <div className="grid size-11 place-items-center overflow-hidden rounded-xl border border-cyan-300/20 bg-slate-950 shadow-[0_0_24px_rgba(34,211,238,0.08)]">
+          <Image
+            alt="SiteBrain"
+            className="size-10 rounded-lg object-contain"
+            height={40}
+            priority
+            src="/brand/sitebrain-icon.png"
+            width={40}
+          />
         </div>
         <div>
           <p className="text-lg font-semibold tracking-normal text-white">
             SiteBrain
           </p>
-          <p className="text-xs text-slate-400">AI Camera Platform</p>
+          <p className="text-xs text-slate-400">Платформа ИИ-камер</p>
         </div>
       </div>
 
@@ -51,7 +59,6 @@ export function Sidebar() {
           );
         })}
       </nav>
-
     </aside>
   );
 }
