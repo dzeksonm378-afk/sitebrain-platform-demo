@@ -26,8 +26,10 @@ export function SafetyAgentPanel({ agent }: SafetyAgentPanelProps) {
     <Card className="border-amber-300/15 bg-amber-300/[0.035]">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <p className="text-sm font-medium text-amber-200">Safety agent</p>
-          <h2 className="mt-2 text-2xl font-semibold tracking-normal text-white">
+          <p className="text-sm font-semibold uppercase tracking-normal text-amber-200">
+            Safety agent
+          </p>
+          <h2 className="mt-2 text-2xl font-black uppercase tracking-normal text-white">
             {agent.name}
           </h2>
           <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300">

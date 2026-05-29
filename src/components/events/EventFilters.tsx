@@ -61,7 +61,7 @@ function FilterGroup<TValue extends string>({
 }) {
   return (
     <div>
-      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
+      <p className="mb-2 text-xs font-semibold uppercase tracking-normal text-zinc-600">
         {label}
       </p>
       <div className="flex flex-wrap gap-2">
@@ -74,8 +74,8 @@ function FilterGroup<TValue extends string>({
               className={cn(
                 "min-h-9 rounded-full px-3 text-xs",
                 isActive
-                  ? "border-cyan-300/30 bg-cyan-300/15 text-cyan-100"
-                  : "border-white/10 bg-white/[0.03] text-slate-300",
+                  ? "border-white bg-white text-black"
+                  : "border-white/15 bg-white/[0.03] text-zinc-300",
               )}
               key={option}
               onClick={() => onChange(option)}

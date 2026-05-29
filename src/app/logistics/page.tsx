@@ -31,8 +31,8 @@ export default function LogisticsPage() {
         </div>
       </SectionHeader>
 
-      <Card className="border-cyan-300/15 bg-cyan-300/[0.04]">
-        <p className="text-sm leading-6 text-slate-300">
+      <Card className="border-white/20 bg-white/[0.06]">
+        <p className="text-sm leading-6 text-zinc-300">
           Logistics Camera Agent tracks warehouse zones, pallets, products and
           long-stay events from camera streams. This public demo uses mock
           events.
@@ -51,10 +51,10 @@ export default function LogisticsPage() {
       <section className="space-y-4" aria-label="Logistics event cards">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-sm font-medium text-cyan-200">
+            <p className="text-sm font-semibold uppercase tracking-normal text-zinc-500">
               Logistics events
             </p>
-            <h2 className="mt-2 text-2xl font-semibold tracking-normal text-white">
+            <h2 className="mt-2 text-2xl font-black uppercase tracking-normal text-white">
               Pallets, occupancy and long-stay alerts
             </h2>
             <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-400">

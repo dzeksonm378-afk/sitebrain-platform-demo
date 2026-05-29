@@ -30,10 +30,10 @@ function getZoneStyle(status: ProgressZoneStatus) {
   }
 
   if (status === "IDLE") {
-    return "border-amber-300/15 bg-amber-300/[0.035] shadow-[0_0_34px_rgba(251,191,36,0.12)]";
+    return "border-amber-300/15 bg-amber-300/[0.035]";
   }
 
-  return "border-cyan-300/15 bg-cyan-300/[0.035]";
+  return "border-white/15 bg-white/[0.04]";
 }
 
 export function ProgressZoneCard({ zone }: ProgressZoneCardProps) {
@@ -41,10 +41,10 @@ export function ProgressZoneCard({ zone }: ProgressZoneCardProps) {
     <Card className={cn("min-h-64", getZoneStyle(zone.status))}>
       <div className="flex items-start justify-between gap-4">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+          <p className="text-xs font-semibold uppercase tracking-normal text-zinc-600">
             Progress zone
           </p>
-          <h3 className="mt-2 text-xl font-semibold tracking-normal text-white">
+          <h3 className="mt-2 text-xl font-black uppercase tracking-normal text-white">
             {zone.name}
           </h3>
         </div>
@@ -73,7 +73,7 @@ export function ProgressZoneCard({ zone }: ProgressZoneCardProps) {
               "h-full rounded-full",
               zone.status === "IDLE"
                 ? "bg-amber-300"
-                : "bg-gradient-to-r from-cyan-300 to-emerald-300",
+                : "bg-white",
             )}
             style={{ width: `${zone.progressPercent}%` }}
           />

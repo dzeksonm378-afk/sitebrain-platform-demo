@@ -47,7 +47,7 @@ function getStatusTone(status: EventStatus) {
 
 export function LogisticsEventCard({ event }: LogisticsEventCardProps) {
   return (
-    <Card className="border-cyan-300/10 bg-white/[0.03]">
+    <Card className="border-white/[0.14] bg-white/[0.035]">
       <div className="flex flex-col gap-5 xl:flex-row xl:items-start xl:justify-between">
         <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-2">
@@ -64,7 +64,7 @@ export function LogisticsEventCard({ event }: LogisticsEventCardProps) {
             <Badge tone="info">{formatConfidence(event.confidence)}</Badge>
           </div>
 
-          <h2 className="mt-4 text-xl font-semibold tracking-normal text-white">
+          <h2 className="mt-4 text-xl font-black uppercase tracking-normal text-white">
             {formatEventType(event.eventType)}
           </h2>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-300">

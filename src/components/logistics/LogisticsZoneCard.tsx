@@ -31,15 +31,15 @@ export function LogisticsZoneCard({ zone }: LogisticsZoneCardProps) {
         isOccupied
           ? "border-amber-300/15 bg-amber-300/[0.035]"
           : "border-emerald-300/10 bg-emerald-300/[0.025]",
-        isLongStay && "shadow-[0_0_34px_rgba(251,191,36,0.12)]",
+        isLongStay && "border-amber-300/25",
       )}
     >
       <div className="flex items-start justify-between gap-4">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+          <p className="text-xs font-semibold uppercase tracking-normal text-zinc-600">
             Warehouse zone
           </p>
-          <h3 className="mt-2 text-xl font-semibold tracking-normal text-white">
+          <h3 className="mt-2 text-xl font-black uppercase tracking-normal text-white">
             {zone.name}
           </h3>
         </div>

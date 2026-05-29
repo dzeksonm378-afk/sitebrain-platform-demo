@@ -17,27 +17,27 @@ const accentStyles: Record<
   online: {
     dot: "bg-emerald-300",
     value: "text-emerald-100",
-    glow: "shadow-[0_0_28px_rgba(110,231,183,0.14)]",
+    glow: "",
   },
   warning: {
     dot: "bg-amber-300",
     value: "text-amber-100",
-    glow: "shadow-[0_0_28px_rgba(251,191,36,0.12)]",
+    glow: "",
   },
   critical: {
     dot: "bg-red-300",
     value: "text-red-100",
-    glow: "shadow-[0_0_28px_rgba(248,113,113,0.14)]",
+    glow: "",
   },
   info: {
-    dot: "bg-cyan-300",
-    value: "text-cyan-100",
-    glow: "shadow-[0_0_28px_rgba(34,211,238,0.12)]",
+    dot: "bg-white",
+    value: "text-white",
+    glow: "",
   },
   neutral: {
-    dot: "bg-slate-300",
+    dot: "bg-zinc-300",
     value: "text-white",
-    glow: "shadow-[0_0_28px_rgba(148,163,184,0.08)]",
+    glow: "",
   },
 };
 
@@ -52,13 +52,15 @@ export function MetricCard({
   return (
     <Card className={cn("min-h-36", styles.glow)}>
       <div className="flex items-center justify-between gap-4">
-        <p className="text-sm font-medium text-slate-400">{label}</p>
+        <p className="text-sm font-semibold uppercase tracking-normal text-zinc-500">
+          {label}
+        </p>
         <span className={cn("size-2.5 rounded-full", styles.dot)} />
       </div>
-      <p className={cn("mt-5 text-4xl font-semibold tracking-normal", styles.value)}>
+      <p className={cn("mt-5 text-4xl font-black tracking-normal", styles.value)}>
         {value}
       </p>
-      <p className="mt-3 text-sm leading-6 text-slate-400">{helper}</p>
+      <p className="mt-3 text-sm leading-6 text-zinc-500">{helper}</p>
     </Card>
   );
 }

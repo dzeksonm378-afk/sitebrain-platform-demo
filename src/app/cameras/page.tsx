@@ -19,11 +19,13 @@ export default function CamerasPage() {
         </div>
       </SectionHeader>
 
-      <Card className="border-cyan-300/15 bg-cyan-300/[0.04]">
+      <Card className="border-white/20 bg-white/[0.06]">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="text-sm font-semibold text-cyan-100">Demo data</p>
-            <p className="mt-2 text-sm leading-6 text-slate-300">
+            <p className="text-sm font-black uppercase tracking-normal text-white">
+              Demo data
+            </p>
+            <p className="mt-2 text-sm leading-6 text-zinc-300">
               No real cameras connected in this public demo. The page shows how
               SiteBrain will organize camera sources and AI events.
             </p>

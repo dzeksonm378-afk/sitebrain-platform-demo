@@ -64,7 +64,7 @@ export function ProgressEventCard({ event }: ProgressEventCardProps) {
             <Badge tone="info">{formatConfidence(event.confidence)}</Badge>
           </div>
 
-          <h2 className="mt-4 text-xl font-semibold tracking-normal text-white">
+          <h2 className="mt-4 text-xl font-black uppercase tracking-normal text-white">
             {formatEventType(event.eventType)}
           </h2>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-300">

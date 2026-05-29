@@ -24,17 +24,17 @@ export function DemoModePanel({
   onSimulate,
 }: DemoModePanelProps) {
   return (
-    <Card className="border-cyan-300/20 bg-cyan-300/[0.05]">
+    <Card className="border-white/20 bg-white/[0.06]">
       <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <div className="flex flex-wrap items-center gap-2">
             <Badge tone="info">Demo Mode</Badge>
             <Badge tone="online">Safe public demo</Badge>
           </div>
-          <h2 className="mt-4 text-2xl font-semibold tracking-normal text-white">
+          <h2 className="mt-4 text-2xl font-black uppercase tracking-normal text-white">
             Mock data / No real cameras connected
           </h2>
-          <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300">
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-zinc-400">
             This dashboard is prepared for QR presentation. It shows the
             product logic without sending data to a backend or connecting real
             video streams.
@@ -46,11 +46,11 @@ export function DemoModePanel({
             onClick={onSimulate}
             variant="primary"
           >
-            <span className="mr-2 size-2 rounded-full bg-cyan-200" />
+            <span className="mr-2 size-2 rounded-full bg-black" />
             Simulate AI Event
           </Button>
           <p
-            className="mt-2 max-w-48 text-xs leading-5 text-slate-400"
+            className="mt-2 max-w-48 text-xs leading-5 text-zinc-500"
             id="simulation-note"
           >
             Demo events generated: {generatedCount}
@@ -65,7 +65,7 @@ export function DemoModePanel({
               <p className="text-sm font-semibold text-emerald-100">
                 Demo event generated
               </p>
-              <p className="mt-1 text-sm leading-6 text-slate-300">
+              <p className="mt-1 text-sm leading-6 text-zinc-300">
                 New AI event added to dashboard preview.
               </p>
             </div>

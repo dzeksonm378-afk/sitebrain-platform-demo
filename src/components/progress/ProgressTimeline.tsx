@@ -33,10 +33,10 @@ export function ProgressTimeline() {
     <Card>
       <div className="flex items-start justify-between gap-4">
         <div>
-          <p className="text-sm font-medium text-cyan-200">
+          <p className="text-sm font-semibold uppercase tracking-normal text-zinc-500">
             Snapshot timeline
           </p>
-          <h2 className="mt-2 text-xl font-semibold tracking-normal text-white">
+          <h2 className="mt-2 text-xl font-black uppercase tracking-normal text-white">
             One demo day from capture to report
           </h2>
         </div>
@@ -46,17 +46,17 @@ export function ProgressTimeline() {
       <div className="mt-5 space-y-3">
         {timelineItems.map((item) => (
           <article
-            className="flex gap-4 rounded-lg border border-white/10 bg-white/[0.03] p-4"
+            className="flex gap-4 rounded-md border border-white/[0.14] bg-white/[0.035] p-4"
             key={item.time}
           >
             <div className="shrink-0">
               <Badge tone={item.tone}>{item.time}</Badge>
             </div>
             <div className="min-w-0">
-              <h3 className="text-sm font-semibold text-white">
+              <h3 className="text-sm font-black uppercase text-white">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm leading-6 text-slate-400">
+              <p className="mt-2 text-sm leading-6 text-zinc-500">
                 {item.description}
               </p>
             </div>

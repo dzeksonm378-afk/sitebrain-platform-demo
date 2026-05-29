@@ -27,8 +27,8 @@ export default function SafetyPage() {
         </div>
       </SectionHeader>
 
-      <Card className="border-cyan-300/15 bg-cyan-300/[0.04]">
-        <p className="text-sm leading-6 text-slate-300">
+      <Card className="border-white/20 bg-white/[0.06]">
+        <p className="text-sm leading-6 text-zinc-300">
           Safety Camera Agent detects PPE violations and dangerous zone entries
           from camera streams. This public demo uses mock events.
         </p>
@@ -44,10 +44,10 @@ export default function SafetyPage() {
       <section className="space-y-4" aria-label="Safety event cards">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-sm font-medium text-cyan-200">
+            <p className="text-sm font-semibold uppercase tracking-normal text-zinc-500">
               Safety detections
             </p>
-            <h2 className="mt-2 text-2xl font-semibold tracking-normal text-white">
+            <h2 className="mt-2 text-2xl font-black uppercase tracking-normal text-white">
               PPE violations and danger zone entries
             </h2>
           </div>

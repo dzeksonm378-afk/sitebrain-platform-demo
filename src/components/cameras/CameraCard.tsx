@@ -29,7 +29,7 @@ export function CameraCard({ camera }: CameraCardProps) {
       <div className="flex items-start justify-between gap-4">
         <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-2">
-            <h2 className="text-lg font-semibold tracking-normal text-white">
+            <h2 className="text-lg font-black uppercase tracking-normal text-white">
               {camera.name}
             </h2>
             <Badge tone="neutral">{formatAgentType(camera.agentType)}</Badge>
@@ -46,7 +46,7 @@ export function CameraCard({ camera }: CameraCardProps) {
       <div className="mt-5 rounded-lg border border-white/10 bg-black/20 p-4">
         <div className="flex items-center justify-between gap-4">
           <div>
-            <p className="text-xs font-medium uppercase tracking-[0.14em] text-slate-500">
+            <p className="text-xs font-semibold uppercase tracking-normal text-zinc-600">
               Stream
             </p>
             <p className="mt-2 text-sm font-semibold text-slate-100">

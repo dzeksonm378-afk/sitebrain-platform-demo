@@ -2,8 +2,8 @@
 
 :root {
   color-scheme: dark;
-  background: #05070d;
-  color: #e5e7eb;
+  background: #070707;
+  color: #f4f4f1;
 }
 
 * {
@@ -17,16 +17,16 @@ body {
 }
 
 html {
-  background: #05070d;
+  background: #070707;
   scroll-behavior: smooth;
 }
 
 body {
   min-height: 100vh;
   background:
-    radial-gradient(circle at 20% 0%, rgba(34, 211, 238, 0.1), transparent 30%),
-    #05070d;
-  color: #e5e7eb;
+    radial-gradient(circle at 16% 0%, rgba(255, 255, 255, 0.08), transparent 28%),
+    linear-gradient(180deg, #090909 0%, #0b0b0d 52%, #070707 100%);
+  color: #f4f4f1;
   font-family:
     Arial,
     Helvetica,
@@ -42,6 +42,6 @@ a {
 }
 
 ::selection {
-  background: rgba(34, 211, 238, 0.28);
-  color: #f8fafc;
+  background: rgba(244, 244, 241, 0.22);
+  color: #ffffff;
 }

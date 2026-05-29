@@ -28,8 +28,10 @@ export function CameraOverview({ cameras }: CameraOverviewProps) {
     <Card>
       <div className="flex items-start justify-between gap-4">
         <div>
-          <p className="text-sm font-medium text-cyan-200">Camera overview</p>
-          <h2 className="mt-2 text-xl font-semibold tracking-normal text-white">
+          <p className="text-sm font-semibold uppercase tracking-normal text-zinc-500">
+            Camera overview
+          </p>
+          <h2 className="mt-2 text-xl font-black uppercase tracking-normal text-white">
             Connected demo cameras
           </h2>
         </div>
@@ -39,20 +41,20 @@ export function CameraOverview({ cameras }: CameraOverviewProps) {
       <div className="mt-5 grid gap-3">
         {cameras.map((camera) => (
           <article
-            className="rounded-lg border border-white/10 bg-white/[0.03] p-4"
+            className="rounded-md border border-white/[0.14] bg-white/[0.035] p-4"
             key={camera.id}
           >
             <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <div className="flex flex-wrap items-center gap-2">
-                  <h3 className="text-base font-semibold text-white">
+                  <h3 className="text-base font-black uppercase text-white">
                     {camera.name}
                   </h3>
                   <Badge tone="neutral">
                     {formatAgentType(camera.agentType)}
                   </Badge>
                 </div>
-                <p className="mt-2 text-sm leading-6 text-slate-400">
+                <p className="mt-2 text-sm leading-6 text-zinc-500">
                   {camera.objectName} / {camera.zone}
                 </p>
               </div>
@@ -60,7 +62,7 @@ export function CameraOverview({ cameras }: CameraOverviewProps) {
                 {formatStatus(camera.status)}
               </Badge>
             </div>
-            <p className="mt-3 text-xs font-medium text-slate-500">
+            <p className="mt-3 text-xs font-medium text-zinc-600">
               Last activity {formatTime(camera.lastActivity)}
             </p>
           </article>

@@ -24,13 +24,13 @@ export function IntegrationBoundaries() {
       aria-label="Demo and production integration boundaries"
       className="grid gap-4 lg:grid-cols-2"
     >
-      <Card className="border-cyan-300/15 bg-cyan-300/[0.025]">
+      <Card className="border-white/15 bg-white/[0.035]">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <p className="text-sm font-medium text-cyan-200">
+            <p className="text-sm font-semibold uppercase tracking-normal text-zinc-500">
               Current public demo
             </p>
-            <h2 className="mt-2 text-xl font-semibold tracking-normal text-white">
+            <h2 className="mt-2 text-xl font-black uppercase tracking-normal text-white">
               Honest demo boundaries
             </h2>
           </div>
@@ -40,10 +40,10 @@ export function IntegrationBoundaries() {
         <ul className="mt-5 grid gap-3">
           {currentDemoItems.map((item) => (
             <li
-              className="flex items-center gap-3 rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-sm text-slate-300"
+              className="flex items-center gap-3 rounded-md border border-white/[0.14] bg-black/30 px-3 py-2 text-sm text-zinc-300"
               key={item}
             >
-              <span className="size-2 rounded-full bg-cyan-300" />
+              <span className="size-2 rounded-full bg-white" />
               {item}
             </li>
           ))}
@@ -53,10 +53,10 @@ export function IntegrationBoundaries() {
       <Card className="border-emerald-300/15 bg-emerald-300/[0.025]">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <p className="text-sm font-medium text-emerald-200">
+            <p className="text-sm font-semibold uppercase tracking-normal text-emerald-200">
               Future production integration
             </p>
-            <h2 className="mt-2 text-xl font-semibold tracking-normal text-white">
+            <h2 className="mt-2 text-xl font-black uppercase tracking-normal text-white">
               Target system components
             </h2>
           </div>
@@ -66,7 +66,7 @@ export function IntegrationBoundaries() {
         <ul className="mt-5 grid gap-3">
           {futureProductionItems.map((item) => (
             <li
-              className="flex items-center gap-3 rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-sm text-slate-300"
+              className="flex items-center gap-3 rounded-md border border-white/[0.14] bg-black/30 px-3 py-2 text-sm text-zinc-300"
               key={item}
             >
               <span className="size-2 rounded-full bg-emerald-300" />

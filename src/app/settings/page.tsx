@@ -55,8 +55,8 @@ export default function SettingsPage() {
         </div>
       </SectionHeader>
 
-      <Card className="border-cyan-300/15 bg-cyan-300/[0.04]">
-        <p className="text-sm leading-6 text-slate-300">
+      <Card className="border-white/20 bg-white/[0.06]">
+        <p className="text-sm leading-6 text-zinc-300">
           Settings are presentation-only in this public demo. Nothing is saved,
           no backend is connected, and no real camera data is processed.
         </p>
@@ -73,7 +73,7 @@ export default function SettingsPage() {
                 <p className="text-sm font-medium text-slate-400">
                   {setting.label}
                 </p>
-                <p className="mt-4 text-xl font-semibold tracking-normal text-white">
+                <p className="mt-4 text-xl font-black uppercase tracking-normal text-white">
                   {setting.value}
                 </p>
               </div>

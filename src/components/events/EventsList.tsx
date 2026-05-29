@@ -10,8 +10,10 @@ export function EventsList({ events }: EventsListProps) {
   if (events.length === 0) {
     return (
       <Card className="border-amber-300/15 bg-amber-300/[0.04]">
-        <p className="text-base font-semibold text-white">No events found</p>
-        <p className="mt-2 text-sm leading-6 text-slate-300">
+        <p className="text-base font-black uppercase tracking-normal text-white">
+          No events found
+        </p>
+        <p className="mt-2 text-sm leading-6 text-zinc-300">
           Try a broader filter combination. The mock journal is intentionally
           small for the stage demo.
         </p>

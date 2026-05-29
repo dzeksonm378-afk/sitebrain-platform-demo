@@ -23,13 +23,13 @@ export function DataFlowPanel() {
     <Card className="border-emerald-300/15 bg-emerald-300/[0.035]">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <p className="text-sm font-medium text-emerald-200">
+          <p className="text-sm font-semibold uppercase tracking-normal text-emerald-200">
             Structured event payload
           </p>
-          <h2 className="mt-2 text-xl font-semibold tracking-normal text-white">
+          <h2 className="mt-2 text-xl font-black uppercase tracking-normal text-white">
             AI detection becomes operational data
           </h2>
-          <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-400">
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-zinc-500">
             SiteBrain does not stop at a frame. The detection is normalized into
             event type, severity, confidence, status and ownership.
           </p>
@@ -40,13 +40,13 @@ export function DataFlowPanel() {
       <dl className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
         {eventPayload.map((item) => (
           <div
-            className="rounded-lg border border-white/10 bg-black/20 p-3"
+            className="rounded-md border border-white/[0.14] bg-black/30 p-3"
             key={item.label}
           >
-            <dt className="text-xs font-medium text-slate-500">
+            <dt className="text-xs font-medium text-zinc-600">
               {item.label}
             </dt>
-            <dd className="mt-2 text-sm font-semibold text-slate-100">
+            <dd className="mt-2 text-sm font-semibold text-zinc-100">
               {item.value}
             </dd>
           </div>

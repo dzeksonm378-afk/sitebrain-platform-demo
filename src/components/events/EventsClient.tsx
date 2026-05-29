@@ -41,11 +41,13 @@ export function EventsClient({ events }: EventsClientProps) {
       <Card>
         <div className="flex flex-col gap-4 xl:flex-row xl:items-start xl:justify-between">
           <div>
-            <p className="text-sm font-medium text-cyan-200">Filters</p>
-            <h2 className="mt-2 text-xl font-semibold tracking-normal text-white">
+            <p className="text-sm font-semibold uppercase tracking-normal text-zinc-500">
+              Filters
+            </p>
+            <h2 className="mt-2 text-xl font-black uppercase tracking-normal text-white">
               Event journal controls
             </h2>
-            <p className="mt-2 text-sm leading-6 text-slate-400">
+            <p className="mt-2 text-sm leading-6 text-zinc-500">
               Filter mock events by AI agent, lifecycle status, and severity.
             </p>
           </div>

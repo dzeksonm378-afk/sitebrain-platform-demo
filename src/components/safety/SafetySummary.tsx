@@ -59,11 +59,13 @@ export function SafetySummary({ summary }: SafetySummaryProps) {
       {summaryItems.map((item) => (
         <Card className="min-h-34" key={item.key}>
           <div className="flex items-center justify-between gap-4">
-            <p className="text-sm font-medium text-slate-400">{item.label}</p>
+            <p className="text-sm font-semibold uppercase tracking-normal text-zinc-500">
+              {item.label}
+            </p>
             <span className={`size-2.5 rounded-full ${item.dotClassName}`} />
           </div>
           <p
-            className={`mt-5 text-4xl font-semibold tracking-normal ${item.valueClassName}`}
+            className={`mt-5 text-4xl font-black tracking-normal ${item.valueClassName}`}
           >
             {summary[item.key]}
           </p>
@@ -75,12 +77,12 @@ export function SafetySummary({ summary }: SafetySummaryProps) {
 
       <Card className="min-h-34 border-emerald-300/15 bg-emerald-300/[0.04]">
         <div className="flex items-center justify-between gap-4">
-          <p className="text-sm font-medium text-slate-400">
+          <p className="text-sm font-semibold uppercase tracking-normal text-zinc-500">
             Average Confidence
           </p>
           <span className="size-2.5 rounded-full bg-emerald-300" />
         </div>
-        <p className="mt-5 text-4xl font-semibold tracking-normal text-emerald-100">
+        <p className="mt-5 text-4xl font-black tracking-normal text-emerald-100">
           {formatConfidence(summary.averageConfidence)}
         </p>
         <p className="mt-3 text-sm leading-6 text-slate-500">

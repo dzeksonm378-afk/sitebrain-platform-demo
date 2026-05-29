@@ -28,12 +28,12 @@ export function ArchitectureOverview() {
       {overviewItems.map((item) => (
         <Card className="min-h-44" key={item.title}>
           <div className="flex items-start justify-between gap-4">
-            <h2 className="text-xl font-semibold tracking-normal text-white">
+            <h2 className="text-xl font-black uppercase tracking-normal text-white">
               {item.title}
             </h2>
             <Badge tone="info">{item.badge}</Badge>
           </div>
-          <p className="mt-4 text-sm leading-6 text-slate-400">
+          <p className="mt-4 text-sm leading-6 text-zinc-500">
             {item.description}
           </p>
         </Card>
