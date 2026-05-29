@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Badge } from "@/components/ui/Badge";
 import { cn } from "@/lib/utils";
 import { navigationItems } from "./nav-items";
 
@@ -53,18 +52,6 @@ export function Sidebar() {
         })}
       </nav>
 
-      <div className="rounded-lg border border-white/10 bg-white/[0.03] p-4">
-        <div className="flex items-center justify-between gap-3">
-          <span className="text-sm font-medium text-slate-200">
-            System Online
-          </span>
-          <span className="size-2 rounded-full bg-emerald-300 shadow-[0_0_18px_rgba(110,231,183,0.75)]" />
-        </div>
-        <div className="mt-4 flex flex-wrap gap-2">
-          <Badge tone="online">Online</Badge>
-          <Badge tone="info">Demo Mode</Badge>
-        </div>
-      </div>
     </aside>
   );
 }
