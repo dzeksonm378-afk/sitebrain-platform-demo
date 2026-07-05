@@ -2,6 +2,7 @@ import { CameraOverview } from "@/components/dashboard/CameraOverview";
 import { CriticalEventsPanel } from "@/components/dashboard/CriticalEventsPanel";
 import { DashboardClient } from "@/components/dashboard/DashboardClient";
 import { MetricCard } from "@/components/dashboard/MetricCard";
+import { PortfolioPreviewSection } from "@/components/portfolio/PortfolioPreviewSection";
 import { Badge } from "@/components/ui/Badge";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import {
@@ -107,6 +108,8 @@ export default function Home() {
         <CriticalEventsPanel events={criticalEvents} />
         <CameraOverview cameras={primaryCameras} />
       </DashboardClient>
+
+      <PortfolioPreviewSection />
     </div>
   );
 }
