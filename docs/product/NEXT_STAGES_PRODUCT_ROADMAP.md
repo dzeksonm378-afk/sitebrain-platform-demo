@@ -2,9 +2,9 @@
 
 Stage 14 creates the camera-ready platform foundation. The next logical stages are:
 
-## Stage 15 - Prisma + PostgreSQL Schema
+## Stage 15 - Prisma + PostgreSQL Schema - current/done
 
-Add database models for cameras, events, agents and event review state.
+Add database models for cameras, events, agents and ingestion logs. The UI still uses mock data.
 
 ## Stage 16 - Event Ingestion API
 

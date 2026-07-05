@@ -1,0 +1,135 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum AgentType {
+  SAFETY
+  LOGISTICS
+  PROGRESS
+}
+
+enum CameraStatus {
+  ONLINE
+  WARNING
+  OFFLINE
+}
+
+enum EventStatus {
+  NEW
+  CONFIRMED
+  FALSE_POSITIVE
+  RESOLVED
+}
+
+enum Severity {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum EventType {
+  NO_HELMET
+  NO_VEST
+  DANGER_ZONE_ENTRY
+  PALLET_ARRIVED
+  PALLET_REMOVED
+  ZONE_OCCUPIED
+  LONG_STAY
+  PROGRESS_SNAPSHOT_CREATED
+  DAILY_REPORT_CREATED
+  ZONE_IDLE_DETECTED
+}
+
+enum DataSourceType {
+  MOCK
+  RTSP
+  VIDEO_FILE
+  SNAPSHOT
+}
+
+model Camera {
+  id             String         @id @default(cuid())
+  externalId     String         @unique
+  name           String
+  agentType      AgentType
+  status         CameraStatus   @default(OFFLINE)
+  objectName     String
+  zone           String
+  locationLabel  String?
+  streamLabel    String?
+  streamUrl      String?
+  dataSourceType DataSourceType @default(MOCK)
+  fps            Int?
+  resolution     String?
+  uptimePercent  Float?
+  isDemo         Boolean        @default(false)
+  isActive       Boolean        @default(true)
+  lastActivityAt DateTime?
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  events         Event[]
+
+  @@index([agentType])
+  @@index([status])
+  @@index([isActive])
+}
+
+model Event {
+  id               String      @id @default(cuid())
+  cameraId         String?
+  cameraExternalId String?
+  camera           Camera?     @relation(fields: [cameraId], references: [id], onDelete: SetNull)
+  agentType        AgentType
+  eventType        EventType
+  status           EventStatus @default(NEW)
+  severity         Severity
+  confidence       Float
+  objectName       String
+  zone             String
+  description      String
+  assignedTo       String?
+  imageLabel       String?
+  imageUrl         String?
+  occurredAt       DateTime
+  receivedAt       DateTime    @default(now())
+  isDemo           Boolean     @default(false)
+  source           String?
+  rawPayload       Json?
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+
+  @@index([agentType])
+  @@index([eventType])
+  @@index([status])
+  @@index([severity])
+  @@index([occurredAt])
+  @@index([cameraExternalId])
+  @@index([cameraId])
+}
+
+model AIAgent {
+  id            String    @id @default(cuid())
+  name          String
+  agentType     AgentType @unique
+  status        String    @default("ONLINE")
+  description   String
+  modelLabel    String?
+  accuracyLabel String?
+  isActive      Boolean   @default(true)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model IngestionLog {
+  id        String   @id @default(cuid())
+  source    String
+  level     String
+  message   String
+  payload   Json?
+  createdAt DateTime @default(now())
+}

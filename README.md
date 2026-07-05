@@ -34,7 +34,7 @@ This is not a production SaaS. It is a polished stage demo based on mock data, d
 
 ## Local Development
 
-Stage 0 created project instructions and documentation. Stage 1 adds the minimal Next.js App Router foundation. Stage 2 adds the base platform shell, dark navigation, and placeholder routes. Stage 3 prepares the typed mock data layer for future UI stages. Stage 4 connects mock data to the main dashboard. Stage 5 adds the Cameras and Events pages. Stage 6 adds the Safety Agent page. Stage 7 adds the Logistics Agent page. Stage 8 adds the Progress Agent page. Stage 9 adds the Architecture page. Stage 10 adds safe client-side demo event simulation. Stage 12 prepares the demo for Vercel deployment and QR-code readiness. Stage 14 prepares the camera-ready platform foundation while preserving mock mode as the public demo fallback.
+Stage 0 created project instructions and documentation. Stage 1 adds the minimal Next.js App Router foundation. Stage 2 adds the base platform shell, dark navigation, and placeholder routes. Stage 3 prepares the typed mock data layer for future UI stages. Stage 4 connects mock data to the main dashboard. Stage 5 adds the Cameras and Events pages. Stage 6 adds the Safety Agent page. Stage 7 adds the Logistics Agent page. Stage 8 adds the Progress Agent page. Stage 9 adds the Architecture page. Stage 10 adds safe client-side demo event simulation. Stage 12 prepares the demo for Vercel deployment and QR-code readiness. Stage 14 prepares the camera-ready platform foundation while preserving mock mode as the public demo fallback. Stage 15 adds the Prisma + PostgreSQL schema foundation without moving the UI away from mock data.
 
 ## Camera-Ready Foundation
 
@@ -66,6 +66,22 @@ npm run lint
 npm run build
 ```
 
+Run Prisma checks:
+
+```bash
+npm run prisma:validate
+npm run prisma:format
+npm run prisma:generate
+```
+
+Push the schema to a real development database only after setting a safe `DATABASE_URL`:
+
+```bash
+npm run db:push
+```
+
+`db:push` requires a real PostgreSQL database URL. The public demo still works in mock mode without a database.
+
 ## What Is Not Included
 
 The demo does not include:
@@ -81,6 +97,8 @@ The demo does not include:
 - mobile app;
 - real personal data;
 - face recognition.
+
+Stage 15 includes Prisma schema files, but the UI still reads mock data. Real database-backed pages and event ingestion are planned for later stages.
 
 ## Deployment
 
