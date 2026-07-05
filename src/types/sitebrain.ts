@@ -39,6 +39,32 @@ export type ProgressZoneStatus = "IN_PROGRESS" | "IDLE" | "COMPLETED";
 
 export type SystemStatus = "ONLINE" | "WARNING" | "OFFLINE";
 
+export type DataMode = "mock" | "hybrid" | "live";
+
+export type EventIngestionPayload = {
+  cameraExternalId: string;
+  agentType: AgentType;
+  eventType: EventType;
+  severity: Severity;
+  confidence: number;
+  objectName: string;
+  zone: string;
+  description: string;
+  imageLabel?: string;
+  occurredAt: string;
+};
+
+export type EventIngestionResponse =
+  | {
+      ok: true;
+      eventId: string;
+    }
+  | {
+      ok: false;
+      error: string;
+      details?: string[];
+    };
+
 export type SiteBrainCamera = {
   id: string;
   name: string;

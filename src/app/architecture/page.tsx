@@ -3,6 +3,7 @@ import { ArchitectureOverview } from "@/components/architecture/ArchitectureOver
 import { DataFlowPanel } from "@/components/architecture/DataFlowPanel";
 import { DemoArchitectureNote } from "@/components/architecture/DemoArchitectureNote";
 import { IntegrationBoundaries } from "@/components/architecture/IntegrationBoundaries";
+import { NextProductionStep } from "@/components/architecture/NextProductionStep";
 import { Badge } from "@/components/ui/Badge";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { mockArchitectureSteps } from "@/data/mock";
@@ -28,6 +29,8 @@ export default function ArchitecturePage() {
       <ArchitectureFlow steps={mockArchitectureSteps} />
 
       <DataFlowPanel />
+
+      <NextProductionStep />
 
       <IntegrationBoundaries />
     </div>
