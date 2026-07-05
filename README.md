@@ -34,7 +34,7 @@ This is not a production SaaS. It is a polished stage demo based on mock data, d
 
 ## Local Development
 
-Stage 0 created project instructions and documentation. Stage 1 adds the minimal Next.js App Router foundation. Stage 2 adds the base platform shell, dark navigation, and placeholder routes. Stage 3 prepares the typed mock data layer for future UI stages. Stage 4 connects mock data to the main dashboard. Stage 5 adds the Cameras and Events pages. Stage 6 adds the Safety Agent page. Stage 7 adds the Logistics Agent page. Stage 8 adds the Progress Agent page. Stage 9 adds the Architecture page. Stage 10 adds safe client-side demo event simulation. Stage 12 prepares the demo for Vercel deployment and QR-code readiness. Stage 14 prepares the camera-ready platform foundation while preserving mock mode as the public demo fallback. Stage 15 adds the Prisma + PostgreSQL schema foundation without moving the UI away from mock data.
+Stage 0 created project instructions and documentation. Stage 1 adds the minimal Next.js App Router foundation. Stage 2 adds the base platform shell, dark navigation, and placeholder routes. Stage 3 prepares the typed mock data layer for future UI stages. Stage 4 connects mock data to the main dashboard. Stage 5 adds the Cameras and Events pages. Stage 6 adds the Safety Agent page. Stage 7 adds the Logistics Agent page. Stage 8 adds the Progress Agent page. Stage 9 adds the Architecture page. Stage 10 adds safe client-side demo event simulation. Stage 12 prepares the demo for Vercel deployment and QR-code readiness. Stage 14 prepares the camera-ready platform foundation while preserving mock mode as the public demo fallback. Stage 15 adds the Prisma + PostgreSQL schema foundation without moving the UI away from mock data. Stage 16 adds the secured event ingestion API foundation for future Python Worker events.
 
 ## Camera-Ready Foundation
 
@@ -42,8 +42,8 @@ Stage 14 documents and types the next product step:
 
 - mock mode remains the default and works without a database;
 - future hybrid/live modes can read events from a database;
-- Python AI Worker should send structured events through a future ingestion API;
-- later stages will add Prisma/PostgreSQL and `POST /api/events/ingest`.
+- Python AI Worker should send structured events through `POST /api/events/ingest`;
+- later stages will connect selected UI pages to database-backed data.
 
 See `docs/product/` for the architecture, ingestion contract and worker integration notes.
 
@@ -82,12 +82,27 @@ npm run db:push
 
 `db:push` requires a real PostgreSQL database URL. The public demo still works in mock mode without a database.
 
+Check the ingestion endpoint info:
+
+```bash
+curl http://localhost:3000/api/events/ingest
+```
+
+Send a demo event from PowerShell after starting the app with matching env values:
+
+```powershell
+$env:SITEBRAIN_INGEST_URL="http://localhost:3000/api/events/ingest"
+$env:SITEBRAIN_INGEST_TOKEN="dev-token"
+node scripts/send-demo-ingest-event.mjs
+```
+
+Real event writes require both `DATABASE_URL` and `SITEBRAIN_INGEST_TOKEN`.
+
 ## What Is Not Included
 
 The demo does not include:
 
-- PostgreSQL;
-- Prisma;
+- production database-backed UI;
 - production authentication;
 - payments;
 - complex backend;
@@ -98,7 +113,7 @@ The demo does not include:
 - real personal data;
 - face recognition.
 
-Stage 15 includes Prisma schema files, but the UI still reads mock data. Real database-backed pages and event ingestion are planned for later stages.
+Stage 15 includes Prisma schema files and Stage 16 includes the ingestion API, but the UI still reads mock data. Real database-backed pages are planned for later stages.
 
 ## Deployment
 

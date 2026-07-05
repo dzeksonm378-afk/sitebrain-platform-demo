@@ -41,6 +41,14 @@ export type SystemStatus = "ONLINE" | "WARNING" | "OFFLINE";
 
 export type DataMode = "mock" | "hybrid" | "live";
 
+export type JsonValue =
+  | string
+  | number
+  | boolean
+  | null
+  | JsonValue[]
+  | { [key: string]: JsonValue };
+
 export type EventIngestionPayload = {
   cameraExternalId: string;
   agentType: AgentType;
@@ -50,14 +58,20 @@ export type EventIngestionPayload = {
   objectName: string;
   zone: string;
   description: string;
+  assignedTo?: string;
   imageLabel?: string;
+  imageUrl?: string;
   occurredAt: string;
+  source?: string;
+  rawPayload?: JsonValue;
 };
 
 export type EventIngestionResponse =
   | {
       ok: true;
       eventId: string;
+      cameraLinked?: boolean;
+      receivedAt?: string;
     }
   | {
       ok: false;
